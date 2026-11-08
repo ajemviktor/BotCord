@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=BotCord Telepítő
+Comment=BotCord telepítése Fedora / Linux rendszerre
+Exec=bash -c 'cd "$(dirname "%k")" && bash ./install.sh; echo ""; read -p "A kilépéshez nyomj Enter-t..."'
+Icon=system-software-install
+Terminal=true
+Categories=Utility;

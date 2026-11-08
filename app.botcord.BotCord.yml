@@ -1,0 +1,36 @@
+app-id: app.botcord.BotCord
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+command: botcord
+
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  - --talk-name=org.freedesktop.Notifications
+  - --filesystem=xdg-config/BotCord:create
+
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
+  build-args:
+    - --share=network
+  env:
+    CARGO_HOME: /run/build/botcord/cargo
+
+modules:
+  - name: botcord
+    buildsystem: simple
+    build-commands:
+      - cargo build --release
+      - install -Dm755 target/release/BotCord /app/bin/botcord
+      - install -Dm644 assets/botcord.png /app/share/icons/hicolor/256x256/apps/app.botcord.BotCord.png
+      - install -Dm644 installer/flatpak/app.botcord.BotCord.desktop /app/share/applications/app.botcord.BotCord.desktop
+      - install -Dm644 installer/flatpak/app.botcord.BotCord.metainfo.xml /app/share/metainfo/app.botcord.BotCord.metainfo.xml
+    sources:
+      - type: dir
+        path: .

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.botcord.BotCord</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>BotCord</name>
+  <summary>Discord Bot Desktop Client • OLED Edition</summary>
+  <description>
+    <p>
+      BotCord is a lightweight, responsive desktop Discord bot management client written in Rust.
+      It features multi-session bot tabs, real-time gateway message events, bot status controls,
+      and rich Discord embed rendering.
+    </p>
+  </description>
+  <launchable type="desktop-id">app.botcord.BotCord.desktop</launchable>
+  <provides>
+    <binary>botcord</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-11-08"/>
+  </releases>
+</component>

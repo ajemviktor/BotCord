@@ -1,0 +1,15 @@
+[package]
+name = "BotCord"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "=1.42.0", default-features = false, features = ["macros", "rt-multi-thread", "net", "io-util", "sync", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "native-tls"] }
+tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+futures-util = "0.3"
+axum = { version = "0.7", features = ["ws"] }
+tower-http = { version = "0.5", features = ["fs", "cors"] }
+

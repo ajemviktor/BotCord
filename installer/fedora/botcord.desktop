@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=BotCord
+Comment=Discord Bot Desktop Client • OLED Edition
+GenericName=Discord Bot Client
+Exec=botcord %u
+Icon=botcord
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;Chat;
+StartupWMClass=botcord
+Keywords=discord;bot;client;chat;
